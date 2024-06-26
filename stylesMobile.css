@@ -1,0 +1,86 @@
+.menu-icon {
+    display: none; /* Скрыть иконку бургера по умолчанию */
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1100; /* Поднять иконку над остальными элементами */
+    width: 30px; /* Задаем ширину иконки */
+    height: auto; /* Высота будет автоматически подстраиваться */
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: center; /* Центрирование контента в мобильной версии */
+    }
+
+    .menu-icon {
+        display: block; /* Показать иконку бургера на мобильных устройствах */
+    }
+
+    nav ul {
+        display: none; /* Скрыть основное меню по умолчанию на мобильных устройствах */
+        flex-direction: column; /* Разместить элементы вертикально */
+        position: absolute;
+        top: 60px; /* Выровнять меню под навигационной панелью */
+        left: 0;
+        background: rgba(255, 255, 255, 0.9); /* Цвет фона для меню */
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+        z-index: 1000; /* Поднять меню над остальными элементами */
+    }
+
+    nav ul.open {
+        display: flex; /* Показать меню при активации бургера */
+    }
+
+    nav ul li {
+        width: 100%; /* Ширина элементов меню */
+        text-align: center; /* Центрировать текст */
+        margin: 10px 0; /* Вертикальные отступы между элементами */
+    }
+}
+
+
+@media (max-width: 768px) {
+    #contacts {
+        padding: 20px;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    .contact-info {
+        width: 100%; 
+        margin-bottom: 20px; 
+        text-align: center; 
+    }
+
+    .map-container {
+        width: 100%; 
+        height: 300px; 
+        overflow: hidden; 
+        margin-top: 20px; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    #about .info-box {
+        padding: 20px; /* Уменьшаем внутренний отступ блока информации */
+    }
+
+    #about .info-box h2 {
+        font-size: 1.8em; /* Уменьшаем размер заголовка */
+        margin-top: 10px; /* Уменьшаем отступ сверху для заголовка */
+        margin-bottom: 10px; /* Уменьшаем отступ снизу для заголовка */
+    }
+
+    #about .info-box p {
+        font-size: 1em; /* Уменьшаем размер текста */
+        line-height: 1.4; /* Уменьшаем межстрочный интервал */
+        margin-bottom: 15px; /* Уменьшаем отступ снизу для параграфов */
+    }
+}

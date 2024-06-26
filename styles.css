@@ -1,0 +1,577 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Стили для Навигационного меню */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15%;
+}
+
+nav .logo-container {
+    height: 60px; /* Максимальная высота контейнера */
+    display: flex;
+    align-items: center;
+}
+
+nav .logo {
+    height: 60px; /* Максимальная высота логотипа */
+    width: auto;
+    transform: scale(2.2); /* Увеличиваем логотип */
+    margin-left: 20px; /* Добавляем отступ слева для смещения логотипа */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff7f00;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #ff5100; /* Более тёмный оранжевый при наведении */
+}
+
+nav ul li a.active {
+    color: rgb(255, 166, 0); /* Оранжевый цвет для активного элемента */
+}
+
+
+/* Стили для раздела ГЛАВНАЯ */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+}
+
+#home {
+    height: 100vh;
+    background-image: url('images/about.jpg');
+}
+
+#home .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+}
+
+#home .bold {
+    font-weight: bold;
+}
+
+#home .larger {
+    font-size: 1.5em;
+}
+
+#home .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f90;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    position: relative;
+}
+
+#home .btn {
+    background: rgb(252, 94, 3);
+    animation: btn-glow 1s infinite alternate;
+}
+
+@keyframes btn-glow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+/* Стили для раздела О НАС */
+#about {
+    height: 100vh;
+    background-image: url('images/BackgroundDrugoe.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#about .info-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333; /* Темный цвет текста */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+#about .info-box h2 {
+    font-size: 2em;
+    color: #4a90e2; /* Голубой цвет заголовка */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Легкая тень для заголовка */
+}
+
+#about .info-box p {
+    margin-bottom: 20px;
+    font-size: 1.1em; /* Чуть больше стандартного размера шрифта */
+}
+
+#about .info-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Стили для галереи */
+.gallery {
+    max-width: 80%;
+    margin: 5px auto; /* Центрируем по горизонтали */
+    position: relative;
+}
+
+#gallery {
+    background-image: url('images/BackgroundGallery.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Прозрачный черный цвет */
+    height: 100vh; /* Высота на весь экран */
+    display: flex;
+    flex-direction: column; /* Размещаем элементы по вертикали */
+    justify-content: center; /* Центрируем по вертикали */
+    padding: 0; 
+}
+
+.slider {
+    max-width: 100%;
+    margin: 100px auto; /* Центрируем слайдер по горизонтали */
+    padding: 0 50px;
+    position: relative;
+}
+
+.slick-slide {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px; /* Добавляем промежуток между слайдами */
+    overflow: hidden; /* Обрезаем контент, выходящий за пределы слайда */
+    transition: transform 0.2s ease-in-out; /* Анимация при наведении */
+}
+
+.slick-slide img {
+    width: 100%; /* Используем 100% ширины для изображения */
+    height: 600px;
+    object-fit: cover;
+    margin: 0; /* Убираем маржины */
+    transition: transform 0.2s ease-in-out; /* Анимация при наведении */
+}
+
+.slick-slide:hover img {
+    transform: scale(1.05); /* Увеличиваем масштаб при наведении */
+}
+
+.slick-prev, .slick-next {
+    font-size: 24px;
+    color: #FFA500; 
+    background: none; 
+    border: none; 
+    outline: none; 
+    cursor: pointer;
+    z-index: 1002; 
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0;
+    z-index: 1001; 
+}
+
+.controls .slick-prev {
+    margin-right: 1px; 
+    left: 6%;
+}
+
+.controls .slick-next {
+    margin-left: 1px;
+    right: 6%;
+}
+
+.slider-dots {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.slider-dots li {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0;
+}
+
+.slider-dots button {
+    font-size: 0;
+    background: transparent;
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dots button:focus {
+    outline: none;
+}
+
+.slider-dots button {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#galleryName {
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    top: 85px;
+    text-align: center; 
+    color: #4a90e2; 
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+@media (max-width: 768px) {
+    .slick-slide {
+        margin: 0 10px; 
+    }
+    .slider {
+        padding: 0 20px;
+    }
+    #galleryName {
+        margin: 20px auto;
+        position: static; 
+        text-align: center; 
+    }
+}
+
+
+/* Стили для раздела Педагоги */
+#teachers {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    background-image: url('images/BackgroundTeachers.jpg'); /* Установка фонового изображения */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    min-height: 100vh; /* Минимальная высота равная высоте экрана */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#teachers h2 {
+    text-align: center;
+    margin-top: 45px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.teachers-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 52px; /* Увеличенный интервал между элементами */
+    max-width: 1200px;
+    margin: 40px auto; /* Увеличенный отступ сверху и снизу */
+}
+
+.teacher {
+    text-align: center;
+    width: 250px; /* Увеличена ширина блока педагога */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Прозрачный белый фон для текста */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Добавим немного скругления углов */
+}
+
+.teacher-image-container {
+    width: 100%; /* Занимает всю ширину контейнера */
+    height: 350px; /* Увеличена высота контейнера изображения */
+    overflow: hidden; /* Скрывает выходящее за пределы содержимое */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Обрезает изображение, сохраняя его пропорции */
+}
+
+.teacher h3 {
+    margin-top: 20px; /* Увеличен отступ сверху */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.teacher p {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+
+/* Стили для кнопки "Запрограммировать визит" */
+.appointment-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7f50; /* Оранжевый цвет кнопки */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-button:hover {
+    background-color: #e0603e; /* Темнее оранжевый при наведении */
+}
+
+/* Стили для всплывающей формы */
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    max-width: 90%;
+    border: 2px solid #f69c55;
+}
+
+.popup-form h2 {
+    text-align: center;
+    color: #f69c55;
+    margin-bottom: 10px;
+}
+
+.popup-form .form-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.popup-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.popup-form input[type="text"],
+.popup-form input[type="tel"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-form button[type="submit"],
+.popup-form button.form-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #f69c55;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-form button[type="submit"]:hover,
+.popup-form button.form-button:hover {
+    background-color: #e8853a;
+}
+
+.popup-form .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+.popup-form .close:hover {
+    color: #333;
+}
+
+/* Стили для сообщения об успешной отправке */
+.success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Выше чем у всплывающей формы */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    max-width: 90%;
+    border: 2px solid #4CAF50; /* Зеленая рамка */
+}
+
+.success-message p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.success-message .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+.success-message .close:hover {
+    color: #333;
+}
+
+
+/* Стили для раздела "КОНТАКТЫ" */
+
+#contacts {
+    background-image: url('images/BackgroundContact.jpg');
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contacts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    text-align: left;
+    width: 30%;
+}
+
+.contact-info h3 {
+    color: #f69c55;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.map-container {
+    width: 65%;
+}
+
+/* Навигационное меню */
+
+nav ul li a#nav-contacts.active,
+nav ul li a#nav-contacts:hover {
+    color: #f69c55;
+}
+
+/* Стили footer */
+
+footer {
+    background-color: #e4abab;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
